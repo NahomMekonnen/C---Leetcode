@@ -14,4 +14,22 @@ public:
         }
         return total - sum;
     }
+
+public:
+    char nextGreatestLetter(vector<char> &letters, char target)
+    {
+        int t = 0;
+        for (char i : letters)
+        {
+            int l = i;
+            if (i > target)
+            {
+                t = l;
+                break;
+            }
+        }
+        if (t == 0)
+            return letters[0];
+        return (char)t;
+    }
 };
