@@ -43,7 +43,7 @@ public:
         delete temp;
         return dummy.next;
     }
-
+    // Reverse Integer
 public:
     int reverse(int x)
     {
