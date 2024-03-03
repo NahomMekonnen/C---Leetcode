@@ -15,6 +15,8 @@ struct ListNode
 
 class Solution
 {
+    // Remove Nth Node From end of list
+
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n)
     {
@@ -80,6 +82,8 @@ public:
         return -1;
     }
 
+    // Search in Rotated array
+
 public:
     bool searchMatrix(vector<vector<int>> &matrix, int target)
     {
@@ -144,7 +148,7 @@ public:
         }
         return ans;
     }
-
+    // Insert Greatest common divisor in Linked list
 public:
     ListNode *insertGreatestCommonDivisors(ListNode *head)
     {
@@ -166,6 +170,7 @@ public:
     }
 };
 
+// Min Stack
 class MinStack
 {
     stack<int> hmm;
