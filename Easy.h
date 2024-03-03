@@ -429,4 +429,18 @@ public:
         }
         return ans;
     }
+
+    // Divide an Array Into Subarrays With Minimum Cost I
+public:
+    int minimumCost(vector<int> &nums)
+    {
+        // int first=nums[0];
+        // nums.erase(nums.begin());
+        // sort(nums.begin(),nums.end());
+        // first+=nums[0];
+        // first+=nums[1];
+        // return first;
+        sort(nums.begin() + 1, nums.end());
+        return nums[0] + nums[1] + nums[2];
+    }
 };

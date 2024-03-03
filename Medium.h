@@ -72,7 +72,7 @@ public:
         y *= sign;
         return (int)y;
     }
-
+    // Search in Rotated Sorted array
 public:
     int search(vector<int> &nums, int target)
     {
@@ -81,9 +81,7 @@ public:
             return distance(nums.begin(), it);
         return -1;
     }
-
-    // Search in Rotated array
-
+    // Search a 2D matrix
 public:
     bool searchMatrix(vector<vector<int>> &matrix, int target)
     {
@@ -107,7 +105,7 @@ public:
         }
         return false;
     }
-
+    // Reverse words in a string
 public:
     string reverseWords(string s)
     {
@@ -127,7 +125,7 @@ public:
         answer.erase(answer.size() - 1);
         return answer;
     }
-
+    // Longest increasing subsequence
 public:
     int lengthOfLIS(vector<int> &nums)
     {
