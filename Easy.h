@@ -1,6 +1,9 @@
 #include <vector>
-
-class Solution
+#include <numeric>
+#include <algorithm>
+#include <vector>
+using namespace std;
+class Solution2
 {
     // Missing Number
 public:

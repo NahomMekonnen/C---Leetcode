@@ -2,6 +2,9 @@
 #include <queue>
 #include <algorithm>
 #include <stack>
+#include <numeric>
+#include <cmath>
+using namespace std;
 
 /*Definition for singly-linked list. */
 struct ListNode
@@ -13,7 +16,7 @@ struct ListNode
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-class Solution
+class Solution1
 {
     // Remove Nth Node From end of list
 
