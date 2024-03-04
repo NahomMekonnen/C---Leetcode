@@ -169,6 +169,38 @@ public:
         }
         return head;
     }
+
+    // Bag of Tokens
+public:
+    int bagOfTokensScore(vector<int> &tokens, int power)
+    {
+        sort(tokens.begin(), tokens.end());
+        // int maxScore=0;
+        int start = 0;
+        int end = tokens.size() - 1;
+        int score = 0;
+        while (start <= end)
+        {
+            if (power >= tokens[start])
+            {
+                score++;
+                power -= tokens[start];
+                start++;
+                // maxScore=max(score,maxScore);
+            }
+            else if (score > 0 && start != end)
+            {
+                score--;
+                power += tokens[end];
+                end--;
+            }
+            else
+            {
+                break;
+            }
+        }
+        return score;
+    }
 };
 
 // Min Stack
