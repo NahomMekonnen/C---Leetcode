@@ -446,4 +446,34 @@ public:
         sort(nums.begin() + 1, nums.end());
         return nums[0] + nums[1] + nums[2];
     }
+
+    // Linked List Cycle
+public:
+    bool hasCycle(ListNode *head)
+    {
+        // First Solution
+        // unordered_map<ListNode*,int> values;
+        // ListNode* i=head;
+        // while(i!=nullptr){
+        //     if(values.find(i)!=values.end())
+        //         return true;
+        //     values[i]++;
+        //     i=i->next;
+        // }
+        // return false;
+
+        // Second solution
+        if (head == nullptr)
+            return false;
+        ListNode *slow = head;
+        ListNode *fast = head;
+        while (fast->next != nullptr && fast->next->next != nullptr)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast)
+                return true;
+        }
+        return false;
+    }
 };
