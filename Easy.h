@@ -476,4 +476,16 @@ public:
         }
         return false;
     }
+    // Moving Zeroes
+public:
+    void moveZeroes(vector<int> &nums)
+    {
+        int initial = nums.size();
+        nums.erase(remove(nums.begin(), nums.end(), 0), nums.end());
+        int after = nums.size();
+        for (int i = 0; i < initial - after; i++)
+        {
+            nums.push_back(0);
+        }
+    }
 };
