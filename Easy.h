@@ -515,4 +515,29 @@ public:
         }
         return slow;
     }
+    // Reverse Linked List
+    /**
+     * Definition for singly-linked list.
+     * struct ListNode {
+     *     int val;
+     *     ListNode *next;
+     *     ListNode() : val(0), next(nullptr) {}
+     *     ListNode(int x) : val(x), next(nullptr) {}
+     *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+     * };
+     */
+public:
+    ListNode *reverseList(ListNode *head)
+    {
+        ListNode *prevPtr = nullptr;
+        ListNode *p = head;
+        while (p != nullptr)
+        {
+            ListNode *dummy = new ListNode(p->val);
+            dummy->next = prevPtr;
+            prevPtr = dummy;
+            p = p->next;
+        }
+        return prevPtr;
+    }
 };
