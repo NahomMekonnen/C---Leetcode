@@ -488,4 +488,31 @@ public:
             nums.push_back(0);
         }
     }
+    // Middle of the Linked List
+public:
+    ListNode *middleNode(ListNode *head)
+    {
+        // First Solution
+        // ListNode* p=head;
+        // int count=0;
+        // while(p!=nullptr){
+        //     count++;
+        //     p=p->next;
+        // }
+        // count/=2;
+        // p=head;
+        // for(int i=0;i<count;i++){
+        //     p=p->next;
+        // }
+        // return p;
+        // Second Solution
+        ListNode *slow = head;
+        ListNode *fast = head;
+        while (fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
 };
