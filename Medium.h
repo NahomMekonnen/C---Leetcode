@@ -254,4 +254,18 @@ public:
     {
         return mins.top();
     }
+    // Delete node in a linked list
+public:
+    void deleteNode(ListNode *node)
+    {
+        ListNode *prev = node;
+        while (node->next != nullptr)
+        {
+            int val = node->next->val;
+            node->val = val;
+            prev = node;
+            node = node->next;
+        }
+        prev->next = nullptr;
+    }
 };
