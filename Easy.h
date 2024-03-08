@@ -540,4 +540,25 @@ public:
         }
         return prevPtr;
     }
+
+    // Count elements with maximum frequency
+public:
+    int maxFrequencyElements(vector<int> &nums)
+    {
+        unordered_map<int, int> myMap;
+        int maxFreq = INT_MIN;
+        for (int i : nums)
+        {
+            myMap[i]++;
+            maxFreq = max(maxFreq, myMap[i]);
+        }
+        int ans = 0;
+        for (const auto &pair : myMap)
+        {
+            if (pair.second == maxFreq)
+                ans++;
+        }
+        ans *= maxFreq;
+        return ans;
+    }
 };
