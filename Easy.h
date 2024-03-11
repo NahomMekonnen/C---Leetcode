@@ -597,4 +597,20 @@ public:
         }
         return true;
     }
+    // Intersection of two arrays
+public:
+    vector<int> intersection(vector<int> &nums1, vector<int> &nums2)
+    {
+        vector<int> ans;
+        set<int> mySet;
+        for (int i : nums1)
+            mySet.insert(i);
+        for (int i : nums2)
+        {
+            if (mySet.find(i) != mySet.end())
+                ans.push_back(i);
+            mySet.erase(i);
+        }
+        return ans;
+    }
 };
