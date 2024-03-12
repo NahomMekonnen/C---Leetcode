@@ -427,6 +427,39 @@ public:
             }
         }
     }
+
+
+    // Remove Zero Sum Consecutive Nodes from Linked List
+    public:
+    ListNode* removeZeroSumSublists(ListNode* head) {
+        if(head==nullptr)
+            return head;
+        unordered_map<int,ListNode*> maps;
+        ListNode* p=head;
+        ListNode* dummy=new ListNode();
+        dummy->next=head;
+        int prefixSum=0;
+        maps[prefixSum]=dummy;
+        while(p!=nullptr){
+            prefixSum+=p->val;
+            if(maps.count(prefixSum))
+            {
+                ListNode* toRemove=maps[prefixSum]->next;
+                int SUM=prefixSum;
+                while(toRemove!=p){
+                    SUM+=toRemove->val;
+                    maps.erase(SUM);
+                    toRemove=toRemove->next;
+                }
+                maps[prefixSum]->next=p->next;
+            }else{
+                maps[prefixSum]=p;
+            }
+            p=p->next;
+        }
+        return dummy->next;
+    }
+
 };
 
 // Min Stack
