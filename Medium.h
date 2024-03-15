@@ -459,7 +459,35 @@ public:
         }
         return dummy->next;
     }
+    // Find the winner of the circular game
+    public:
+    int findTheWinner(int n, int k) {
+        vector<int> nums(n);
+        iota(nums.begin(),nums.end(),1);
+        int i=0;
+        while(nums.size()>1){
+            i=(i+k-1)%nums.size();
+            nums.erase(nums.begin()+i);
+        }
+        return nums[0];
+    }
+    // Binary subarrays with sum
+    public:
+    int numSubarraysWithSum(vector<int>& nums, int goal) {
+       unordered_map<int, int> sumFrequency;
+        int cumulativeSum = 0;
+        int count = 0;
 
+        for (int num : nums) {
+            cumulativeSum += num;
+            if (cumulativeSum == goal) 
+                count++;
+            count += sumFrequency[cumulativeSum - goal];
+            sumFrequency[cumulativeSum]++;
+        }
+
+        return count;
+    }
 };
 
 // Min Stack
