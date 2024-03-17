@@ -654,4 +654,9 @@ public:
         ans[j]=nums[nums.size()-1];
         return ans;
     }
+    // Smallest even multiple
+public:
+    int smallestEvenMultiple(int n) {
+        return (n%2==0)? n : n*2;
+    }
 };
