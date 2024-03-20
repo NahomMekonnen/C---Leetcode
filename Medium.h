@@ -488,6 +488,27 @@ public:
 
         return count;
     }
+    // Merge in between linked lists
+    public:
+    ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2) {
+        ListNode* connect=list1;
+        ListNode* prev=nullptr;
+        ListNode* end=list2;
+        while(end->next!=nullptr){
+            end=end->next;
+        }
+        for(int i=0;i<a;i++){
+            prev=connect;
+            connect=connect->next;
+        }
+        for(int i=a;i<b;i++){
+            connect=connect->next;
+        }
+        prev->next=list2;
+        end->next=connect->next;
+        return list1;
+    }
+    
 };
 
 // Min Stack
